@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Redirecting</title>
+    <script>
+      const target = new URL("https://dkaruri.github.io/chicago-building-permits-search/");
+      const oldBase = "/chicago-building-permits-mcp/";
+      const path = window.location.pathname.startsWith(oldBase)
+        ? window.location.pathname.slice(oldBase.length)
+        : "";
+      target.pathname = target.pathname + path;
+      target.search = window.location.search;
+      target.hash = window.location.hash;
+      window.location.replace(target.toString());
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to <a href="https://dkaruri.github.io/chicago-building-permits-search/">Chicago Building Permits Search</a>.</p>
+  </body>
+</html>
